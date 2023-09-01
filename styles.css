@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'bree_serifregular';
+    src: url('fonts/breeserif-regular-webfont.woff2') format('woff2'),
+         url('fonts/breeserif-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    color: #eef;
+    font-family: "bree_serifregular", Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    letter-spacing: 0.1em;
+}
+
+#background {
+    background-color: #e62;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    align-self: center;
+    margin: auto;
+    display: grid;
+    align-items:flex-end;
+    
+    animation-name: bounce, fillBackground;
+    animation-duration: 0.5s, 0.6s;
+    animation-iteration-count: 5, 1;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5), linear;
+    animation-direction: alternate, normal;
+    animation-fill-mode: forwards, forwards;
+    animation-delay: 0s, 2.5s;
+}
+
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(0, 200px, 0); }
+}
+
+@keyframes fillBackground {
+    from {
+        transform: translate3d(0, 200px, 0);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    20% {
+        transform: translate3d(0, 50px, 0);
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    to {
+        transform: translate3d(0, 0px, 0);
+        height: 100vh;
+        width: 100vw;
+        border-radius: 00%;
+    }
+}
+
+.fadeIn {
+    opacity: 0;
+    text-align: center;
+
+    animation: 1s linear 3.1s normal forwards fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+a {
+    color: lightblue;
+}
